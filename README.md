@@ -20,8 +20,8 @@ This repository is primarily dedicated to testing Docker containers with a Game 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/gamestore-frontend.git
-   cd gamestore-frontend
+   git clone https://github.com/QyperXit/dockerized-game-stock.git
+   cd dockerized-game-stock
    ```
 
 2. **Install dependencies:**
@@ -47,7 +47,7 @@ For deploying the application using Docker, follow the steps below:
    Ensure Docker is running, then build the image with the following command:
 
    ```bash
-   docker build -t gamestore-frontend .
+   docker build -t gamestock-frontend .
    ```
 
 2. **Run the Docker container:**
