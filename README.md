@@ -1,50 +1,108 @@
-# React + TypeScript + Vite
+# Game Store Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend for a Game Store application built with React, TypeScript, and Vite. The application is designed to offer a smooth and dynamic user interface for browsing and purchasing games.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern React application using Hooks and Functional components
+- TypeScript for enhanced code quality and maintainability
+- Vite for fast development experience and build process
+- ESLint configured for React and TypeScript
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Node.js](https://nodejs.org/) (for local development)
+- [npm](https://www.npmjs.com/) (or yarn)
+- [Docker](https://www.docker.com/) (for containerized deployment)
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Local Development
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clone the repository:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   git clone https://github.com/yourusername/gamestore-frontend.git
+   cd gamestore-frontend
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the application in development mode with hot module reloading enabled.
+
+### Docker Deployment
+
+For deploying the application using Docker, follow the steps below:
+
+1. **Build the Docker image:**
+
+   Ensure Docker is running, then build the image with the following command:
+
+   ```bash
+   docker build -t gamestore-frontend .
+   ```
+
+2. **Run the Docker container:**
+
+   Use the following command to run the Docker container:
+
+   ```bash
+   docker run -p 3000:3000 gamestore-frontend
+   ```
+
+   The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+## ESLint Configuration
+
+For production applications, it is recommended to expand the default ESLint configuration to enable type-aware lint rules.
+
+1. **Update `parserOptions`:**
+
+   ```js
+   export default tseslint.config({
+     languageOptions: {
+       parserOptions: {
+         project: ['./tsconfig.node.json', './tsconfig.app.json'],
+         tsconfigRootDir: import.meta.dirname,
+       },
+     },
+   })
+   ```
+
+2. **Adjust ESLint packages:**
+
+   Replace `tseslint.configs.recommended` with `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`.
+
+3. **Install and configure `eslint-plugin-react`:**
+
+   ```js
+   // eslint.config.js
+   import react from 'eslint-plugin-react'
+
+   export default tseslint.config({
+     settings: { react: { version: '18.3' } },
+     plugins: {
+       react,
+     },
+     rules: {
+       ...react.configs.recommended.rules,
+       ...react.configs['jsx-runtime'].rules,
+     },
+   })
+   ```
+
+For more details on advanced usage and configurations, please refer to the official documentation for React, Vite, and TypeScript.
+
+## License
+
+This project is licensed under the MIT License.
