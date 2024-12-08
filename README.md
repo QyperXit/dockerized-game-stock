@@ -1,8 +1,6 @@
 # Game Store Frontend
 
-This repository contains the frontend for a Game Store application built with React, TypeScript, and Vite. The application is designed to offer a smooth and dynamic user interface for browsing and purchasing games.
-
-## Features
+This repository is primarily dedicated to testing Docker containers with a Game Store application's frontend built using React, TypeScript, and Vite. The application offers a simple user interface for adding and removing items, ensuring seamless updates and interactions. Features
 
 - Modern React application using Hooks and Functional components
 - TypeScript for enhanced code quality and maintainability
